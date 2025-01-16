@@ -1,18 +1,35 @@
-import type { Config } from "tailwindcss";
-
-export default {
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      keyframes: {
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(-10px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        },
+        'spin-slow': {
+          '100%': {
+            transform: 'rotate(360deg)'
+          }
+        }
       },
-    },
+      animation: {
+        'fade-in': 'fade-in 0.3s ease-out',
+        'spin-slow': 'spin-slow 8s linear infinite'
+      }
+    }
   },
   plugins: [],
-} satisfies Config;
+  darkMode: 'class'
+};
