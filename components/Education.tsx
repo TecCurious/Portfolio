@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Education = () => {
-  const { scrollYProgress } = useScroll();
+  // const { scrollYProgress } = useScroll();
   
   // Enhanced container variants with more dynamic animations
   const containerVariants = {

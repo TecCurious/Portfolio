@@ -2,7 +2,7 @@
 "use client"
 
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, FileText, Heart } from 'lucide-react';
+import { Mail, Github, Linkedin, Heart } from 'lucide-react';
 import Link from 'next/link';
 
 const Footer = () => {

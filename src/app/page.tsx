@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from 'framer-motion';
 import Navbar from '../../components/Navbar'
 import Hero from '../../components/Hero'
 import Education from '../../components/Education'

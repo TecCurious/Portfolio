@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { X,  Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { sendContactEmail } from '../lib/sentMail';
 
 interface ContactFormProps {
@@ -22,6 +22,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
   });
   const [status, setStatus] = useState<FormStatus>('');
   const [isVisible, setIsVisible] = useState(false);
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(onClose, 300);
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -32,12 +36,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
     window.addEventListener('keydown', handleEscape);
     
     return () => window.removeEventListener('keydown', handleEscape);
-  }, []);
+  }, [handleClose]);
 
-  const handleClose = () => {
-    setIsVisible(false);
-    setTimeout(onClose, 300);
-  };
+ 
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

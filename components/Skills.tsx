@@ -149,7 +149,7 @@ const Skills: React.FC = () => {
                 Tech Stack
               </h3>
               <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
-                {techStack.map((tech, index) => (
+                {techStack.map((tech) => (
                   <motion.div
                     key={tech.name}
                     className="group flex flex-col items-center gap-2 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300"
